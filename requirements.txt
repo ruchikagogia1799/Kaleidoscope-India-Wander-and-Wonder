@@ -1,0 +1,5 @@
+streamlit>=1.32
+pandas>=2.0
+numpy>=1.24
+qrcode[pil]>=7.4
+pillow>=9.0
