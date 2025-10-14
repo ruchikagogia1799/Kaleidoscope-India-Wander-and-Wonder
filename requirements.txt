@@ -1,5 +1,16 @@
-streamlit>=1.32
-pandas>=2.0
-numpy>=1.24
-qrcode[pil]>=7.4
-pillow>=9.0
+# Core dependencies
+streamlit==1.39.0
+pandas==2.2.3
+numpy==1.26.4
+Pillow==10.4.0
+
+# Database
+SQLAlchemy==2.0.35
+psycopg2-binary==2.9.9
+
+# Optional for AVIF images (graceful fallback in your code)
+pillow-avif-plugin==1.3.1
+
+# Caching, compatibility, and data safety
+python-dotenv==1.0.1
+requests==2.32.3

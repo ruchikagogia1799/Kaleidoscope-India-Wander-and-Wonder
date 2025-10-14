@@ -1,56 +1,94 @@
-# Kaleidoscope India — *Wander & Wonder* 🌏✨
+# 🌏✨ Kaleidoscope India – *Wander & Wonder*
 
-A Streamlit app to explore India’s iconic sights with quick facts, ⭐ ratings, entrance fees, and a **local dish to try** nearby. Filter by region/state/city, view rich cards & details, play a short quiz with instant feedback, and send suggestions via the built-in Feedback page.
+<img src="img2.jpg" alt="App Preview" width="750"/>
 
-**Live app:** https://finalprojecttravelindia-zaduhq35p5izncxxcpiact.streamlit.app
+### ✨ Explore India’s Landmarks, Cuisine & Culture — All in One Interactive Dashboard
 
----
-
-## Features
-
-- **Explore browser**
-  - Filters: Region → State(s) → City/Cities → *Type of attraction* (moved below City) + keyword search
-  - Beautiful cards with cover photo, location, ⭐ Google rating, 📣 number of reviews, 💵 entrance fee
-  - Local dish suggestion with Veg/Non-Veg tags, dish image, type & course
-  - Detail view with extra info (nearest airport, best time, DSLR allowed)
-- **Images that “just work”**
-  - Reads images from local folders or URLs; safe loader auto-downscales huge files and skips corrupt ones
-  - Supported by default: `.jpg .jpeg .png .webp .gif` (AVIF optional)
-- **Mini-quiz (8 Qs)**
-  - Instant score + per-question ✅/❌ feedback
-  - Results saved to `quiz_results.csv` and visible on **Results** page
-  - Share block with QR code (auto-generated)
-- **Feedback page**
-  - Mailto form opens a pre-filled email to your address
-  - Instagram link for updates
-- **Polish**
-  - Half-page hero GIF/image on Home
-  - USD equivalence toggle for fees
-  - Robust CSV parsing (tolerant reader)
+🔗 **Live App:** [Open on Streamlit](https://kaleidoscope-india-wander-and-wonder.streamlit.app/)  
+🎞️ **Presentation Slides:** [View on Google Slides](https://docs.google.com/presentation/d/1VUTDyOn7zFxfnJW2zKyOygY1aOUEY5bSRG7W5MrPglg/edit?usp=sharing)
 
 ---
 
-## Quickstart
+## 🧭 Overview
 
-### 1) Requirements
-- Python 3.10+ (3.11/3.12 fine)
-- Pip
+**Kaleidoscope India** is an interactive **Streamlit web application** that unites **travel data, regional cuisine insights, and visual storytelling** — powered by the **Google Drive API** and **PostgreSQL Cloud**.  
 
-### 2) Setup
+The app enables users to:
+- Explore India’s iconic **tourist attractions**
+- Discover authentic **local dishes**
+- Play a fun, data-driven **travel quiz**
+- View verified **Google Drive-hosted images** dynamically in real time  
+
+This project showcases end-to-end proficiency in **data engineering, visualization, and cloud-based Streamlit app development**.
+
+---
+
+## 🎯 Objectives
+
+- Build an **interactive travel & cuisine dashboard**  
+- Integrate **Google Drive Cloud links** for verified image display  
+- Provide dynamic filtering by **region, state, and city**  
+- Implement a **gamified quiz** with real-time feedback and leaderboard  
+- Use **Neon PostgreSQL Cloud** for secure quiz score storage  
+
+---
+
+## ⚙️ Methodology
+
+| Step | Description |
+|------|--------------|
+| **1. Data Cleaning & Normalization** | Combined and standardized attraction + cuisine datasets using `pandas` |
+| **2. Image Integration** | Automated upload of 300+ verified photos to Google Drive and dynamically linked via Drive API |
+| **3. UI/UX Design** | Designed a responsive multi-page Streamlit interface with caching and image optimization |
+| **4. Cloud Setup** | Integrated Neon PostgreSQL and SQLAlchemy for persistent storage |
+| **5. Performance Optimization** | Implemented thumbnail caching, lazy loading, and concurrent prefetching for faster image load times |
+
+---
+
+## 🧠 Tech Stack
+
+**Languages & Libraries**  
+`Python` · `Streamlit` · `Pandas` · `NumPy` · `SQLAlchemy` · `Pillow` · `Requests`
+
+**Cloud & Database**  
+`Google Drive API` · `PostgreSQL (Neon Cloud)`
+
+**Highlights**  
+- Multi-page architecture (`Homepage`, `Explore`, `Quiz`, `Leaderboard`)  
+- Cached & threaded image loading for high performance  
+- Secure `.env` configuration for database credentials  
+- Clean responsive UI using Streamlit components and CSS styling  
+
+---
+
+## 📊 Key Features
+
+- 🏰 **Explore India:** Filter attractions by region, state, or city  
+- 🍛 **Local Cuisine Pairing:** Each attraction links to a matching local dish (Veg/Non-Veg)  
+- ☁️ **Cloud Integration:** All images served dynamically from Google Drive  
+- 🎮 **Quiz Mode:** 8-question quiz with instant results and visual celebration  
+- 🏆 **Leaderboard:** Neon PostgreSQL-powered persistent ranking  
+- 📈 **Data Export:** Download combined attraction–dish dataset in one click  
+
+---
+
+## 🚀 Quick Start
+
 ```bash
-git clone <your-repo-url>
-cd Final_Project_Kaleidoscope_India
+# Clone repository
+git clone https://github.com/ruchikagogia1799/Kaleidoscope-India.git
+cd Kaleidoscope-India
 
-# (optional) create a virtualenv
+# Create virtual environment
 python -m venv .venv
-# Windows
-.\.venv\Scripts\activate
-# macOS/Linux
-source .venv/bin/activate
+.venv\Scripts\activate      # Windows
+source .venv/bin/activate   # Mac/Linux
 
-# install deps
+# Install dependencies
 pip install -r requirements.txt
-# If you don't have a requirements.txt yet:
-pip install streamlit pandas numpy pillow qrcode
-# (optional, for AVIF)
-pip install pillow-avif-plugin
+
+# Add environment variables
+DB_URL=postgresql+psycopg2://<USER>:<PASSWORD>@<HOST>/<DB_NAME>?sslmode=require
+
+# Run locally
+streamlit run Homepage.py
