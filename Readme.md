@@ -4,7 +4,7 @@
 
 ### ✨ Explore India’s Landmarks, Cuisine & Culture — All in One Interactive Dashboard
 
-🔗 **Live App:** [Open on Streamlit](https://kaleidoscope-india-wander-and-wonder.streamlit.app/)  
+🔗 **Live App:** [Open on Streamlit](https://kaleidoscope-india.streamlit.app/)  
 🎞️ **Presentation Slides:** [View on Google Slides](https://docs.google.com/presentation/d/1VUTDyOn7zFxfnJW2zKyOygY1aOUEY5bSRG7W5MrPglg/edit?usp=sharing)
 
 ---
