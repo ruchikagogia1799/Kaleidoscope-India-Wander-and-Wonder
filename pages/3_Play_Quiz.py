@@ -116,7 +116,7 @@ try:
 
         if rows:
             df = pd.DataFrame(rows, columns=["NAME", "SCORE OUT OF 8", "DATE SUBMITTED"])
-            st.dataframe(df, use_container_width=True, hide_index=True)
+            st.dataframe(df, width="stretch", hide_index=True)
 
             # Optional: download leaderboard
             csv = df.to_csv(index=False).encode("utf-8")
