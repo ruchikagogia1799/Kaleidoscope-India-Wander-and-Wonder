@@ -116,10 +116,13 @@ try:
 
         if rows:
             df = pd.DataFrame(rows, columns=["NAME", "SCORE OUT OF 8", "DATE SUBMITTED"])
-            st.dataframe(df, width='stretch', hide_index=True)
+            st.dataframe(df, use_container_width=True, hide_index=True)
+
+            # Optional: download leaderboard
             csv = df.to_csv(index=False).encode("utf-8")
             st.download_button("⬇️ Download Leaderboard", csv, "quiz_leaderboard.csv", "text/csv")
+
         else:
             st.info("No quiz results yet.")
 except Exception as e:
-    st.error(f"⚠️ Could not load leaderboard: {e}")
+    st.warning(f"⚠️ Could not load leaderboard: {e}")
